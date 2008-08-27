@@ -1,0 +1,9 @@
+Usage:
+
+    Extract ask-vimrc as ~/.vim, then add the following to your .vimrc:
+
+        source ~/.vim/vimrc 
+
+    re-load vim, and you're done.
+
+    
