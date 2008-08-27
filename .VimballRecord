@@ -1,0 +1,2 @@
+omniperl.vba: call delete('/Users/ask/.vim/ftplugin/perl/omniperl.pl')|call delete('/Users/ask/.vim/ftplugin/perl/omniperl.vim')|call delete('/Users/ask/.vim/doc/omniperl.txt')
+manpageview.vba: call delete('/Users/ask/.vim/plugin/manpageview.vim')|call delete('/Users/ask/.vim/syntax/man.vim')|call delete('/Users/ask/.vim/syntax/mankey.vim')|call delete('/Users/ask/.vim/syntax/info.vim')|call delete('/Users/ask/.vim/syntax/manphp.vim')|call delete('/Users/ask/.vim/doc/manpageview.txt')
