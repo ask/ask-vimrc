@@ -147,6 +147,7 @@ map ,n <Esc>:tabclose<CR><Esc>:tabedit .<CR>
 map ,u <Esc>iλ<Esc>
 map ,g <Esc>:w<CR><Esc>:!git commit "%"<CR>
 map ,h <Esc>:w<CR><Esc>:perl -c "%"<CR>
+map ,c <Esc>:VCSCommit<CR>
 "smoother scrolling
 :map <C-U> <C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y>      
 :map <C-D> <C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E>
