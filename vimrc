@@ -55,9 +55,10 @@ colorscheme evening
 " GUI options (only in effect when running in a GUI).
 if has("gui_running")
     set gfn=Inconsolata:h18
-    set enc=utf-8 
+    set enc=utf-8
     colorscheme brookstream " macvim
     syntax on
+
 
     if has("gui_macvim")
         " Map Cmd+<n> to move to tab <n>.
@@ -234,3 +235,19 @@ map ,l <Esc>:TlistOpen<CR><Esc>
 
 set list
 set listchars=tab:>-,extends:#
+
+" Omnicompletion for Python
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType vim set omnifunc=syntaxcomplete#Complete
+autocmd FileType c set omnifunc=ccomplete#Complete
+inoremap <C-space> <C-x><C-O>
+
+" Window dimensions
+set lines=38
+set columns=78
+
+" Don't show toolbar
+set go-=T
