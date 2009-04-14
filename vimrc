@@ -59,6 +59,15 @@ if has("gui_running")
     colorscheme brookstream " macvim
     syntax on
 
+    " Import Python paths
+    python << EOF
+import os
+import sys
+import vim
+for p in sys.path:
+    if os.path.isdir(p):
+        vim.command(r"set path+=%s" % (p.replace(" ", r"\ ")))
+EOF
 
     if has("gui_macvim")
         " Map Cmd+<n> to move to tab <n>.
@@ -251,3 +260,4 @@ set columns=78
 
 " Don't show toolbar
 set go-=T
+
