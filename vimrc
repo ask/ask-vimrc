@@ -5,9 +5,6 @@
 set nocompatible
 set textwidth=78
 
-iab papp  ^]:r ~/.code_templates/perl_application.pl
-
-
 "set scrollbind
 set noscrollbind
 syncbind
@@ -139,24 +136,14 @@ set wrapscan
 
 " from Perl Hacks (O'Reilly 2006)
 set iskeyword+=:
-set complete+=k~/.vim_extras/file_that_lists_every_installed_Perl_module
-map ,t  <Esc>:!prove -vl %<CR>
-map ,T  <Esc>:!prove -lv % \| less <CR>
-
-map ,p <Esc>:%!perlwikidoc % 2>/dev/null<CR>
-map ,C <Esc>:r ~/.vim/RCS.stub<CR>
-map ,s <Esc>:r ~/.vim/LOCAL.stub<CR>
-map ,W <Esc>:r ~/.vim/WIKIPOD.stub<CR>
 map ,j <Esc>:r ~/.vim/js-header.stub<CR>
 
 map ,. <Esc>:!a x<CR>
 map ,/ <Esc>:!a err<CR>
 map ,m <Esc>:tabedit .<CR>
-map ,M <Esc>:%!xwa_helper -t module MyClass -<CR>
 map ,n <Esc>:tabclose<CR><Esc>:tabedit .<CR>
 map ,u <Esc>iλ<Esc>
 map ,g <Esc>:w<CR><Esc>:!git commit "%"<CR>
-map ,h <Esc>:w<CR><Esc>:perl -c "%"<CR>
 map ,c <Esc>:VCSCommit<CR>
 "smoother scrolling
 :map <C-U> <C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y>      
@@ -170,41 +157,6 @@ filetype plugin indent on
 "filetype indent on
 augroup vimrcEx
 
-
-function GetPerlFold() 
-   if getline(v:lnum) =~ '^\s*sub\s' 
-      return ">1" 
-   elseif getline(v:lnum) =~ '\}\s*$' 
-      let my_perlnum = v:lnum 
-      let my_perlmax = line("$") 
-      while (1) 
-         let my_perlnum = my_perlnum + 1 
-         if my_perlnum > my_perlmax 
-            return "<1" 
-         endif 
-         let my_perldata = getline(my_perlnum) 
-         if my_perldata =~ '^\s*\(\#.*\)\?$' 
-            " do nothing 
-         elseif my_perldata =~ '^\s*sub\s' 
-            return "<1" 
-         else 
-            return "=" 
-         endif 
-      endwhile 
-   else 
-      return "=" 
-   endif 
-endfunction 
-"setlocal foldexpr=GetPerlFold() 
-"setlocal foldmethod=expr 
-
-"let perl_nofold_subs = 1;
-"let perl_fold=1
-"unlet perl_nofold_packages
-"
-
-let perl_include_pod=1
-let perlhelp_prog="perldoc"
 
 
 au!
@@ -229,8 +181,6 @@ endfun
 " taglist config
 "
 "
-
-let Tlist_Ctags_Cmd          = 'dotperltags'
 
 let Tlist_Auto_Highlight_Tag = 1
 let Tlist_Exit_OnlyWindow    = 1
