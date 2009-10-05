@@ -14,7 +14,6 @@ helptags ~/.vim/doc
 
 iab __nowdate__ <C-r>=strftime('%c')<CR>
 
-
 " terminal and gui settings
 set term=ansi
 set termencoding=utf-8
@@ -27,8 +26,6 @@ set smartcase
 set noerrorbells
 set showmatch
 set showcmd
-set wildmode=longest,list
-set wildmenu
 set completeopt=menuone,longest,preview
 set hidden
 set complete+=k
@@ -47,13 +44,13 @@ hi Search ctermfg=white ctermbg=lightblue
 "set nofoldenable
 
 
-colorscheme evening
+colorscheme baycomb
 
 " GUI options (only in effect when running in a GUI).
 if has("gui_running")
     set gfn=Inconsolata:h18
     set enc=utf-8
-    colorscheme brookstream " macvim
+    colorscheme baycomb " macvim
     syntax on
 
     " Import Python paths
@@ -111,7 +108,6 @@ endif
 
 " display and behaviour settings
 set ruler
-set showcmd
 set foldenable
 set expandtab
 set history=200
@@ -132,7 +128,6 @@ set incsearch
 set showmatch "potentially slow, turn off in big files.
 set nowrap
 set wrapscan
-
 
 " from Perl Hacks (O'Reilly 2006)
 set iskeyword+=:
@@ -211,3 +206,49 @@ set columns=78
 " Don't show toolbar
 set go-=T
 
+set listchars=tab:»·,trail:·
+set list
+
+" Jump 5 lines when running out of the screen
+set scrolljump=5
+" Indicate jump out of the screen when 3 lines before end of the screen
+set scrolloff=3
+
+set showbreak=>\
+set wildignore=*.bak,*.pyc,*.swp
+set wildmenu
+set wcm=<Tab>
+set wildmode=list:longer
+
+" Highligh current line
+"set cursorline
+"set cursorcolumn
+set ruler
+set statusline=[TYPE=%Y]\ [ENC=%{&fenc}]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]
+hi StatusLine term=bold,reverse cterm=bold ctermfg=7 ctermbg=0
+hi StatusLineNC term=reverse cterm=bold ctermfg=8
+set t_Co=256
+
+" Speed up response to ESC key
+set notimeout
+set ttimeout
+set timeoutlen=100
+
+inoremap # X^H#
+
+" Highlight trailing whitespace
+hi TrailingSpace ctermbg=1
+au filetype c,cpp,python match TrailingSpace "\s\+\n"
+
+"tab completion of words in insert mode
+function InsertTabWrapper()
+    let col = col('.') - 1
+    if !col || getline('.')[col - 1] !~ '\k'
+        return "\<tab>"
+    else
+        return "\<c-p>"
+    endif
+endfunction
+
+inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+highlight Pmenu guibg=brown gui=bold
