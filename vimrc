@@ -218,7 +218,6 @@ set showbreak=>\
 set wildignore=*.bak,*.pyc,*.swp
 set wildmenu
 set wcm=<Tab>
-set wildmode=list:longer
 
 " Highligh current line
 "set cursorline
@@ -233,8 +232,6 @@ set t_Co=256
 set notimeout
 set ttimeout
 set timeoutlen=100
-
-inoremap # X^H#
 
 " Highlight trailing whitespace
 hi TrailingSpace ctermbg=1
