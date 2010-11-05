@@ -43,6 +43,9 @@ hi Search ctermfg=white ctermbg=lightblue
 "set foldnestmax=1
 "set nofoldenable
 
+"w!! writes the file using sudo
+cmap w!! w !sudo tee % >/dev/null
+
 
 colorscheme baycomb
 
@@ -144,7 +147,7 @@ map ,c <Esc>:VCSCommit<CR>
 :map <C-U> <C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y>      
 :map <C-D> <C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E>
 
-let mapleader = "\\"
+let mapleader = ","
 
 " autocmd
 filetype plugin on
@@ -206,6 +209,8 @@ set columns=78
 " Don't show toolbar
 set go-=T
 
+set title
+
 set listchars=tab:»·,trail:·
 set list
 
@@ -249,3 +254,5 @@ endfunction
 
 inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 highlight Pmenu guibg=brown gui=bold
+
+runtime macros/matchit.vim
