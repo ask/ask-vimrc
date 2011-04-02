@@ -19,20 +19,26 @@ set term=ansi
 set termencoding=utf-8
 set encoding=utf-8
 set backspace=indent,eol,start
-set tabstop=4
 set visualbell
-set smarttab
 set smartcase
 set noerrorbells
 set showmatch
 set showcmd
 set completeopt=menuone,longest,preview
-set hidden
 set complete+=k
 set iskeyword=@,48-57,192-255
 set iskeyword-=:
 set modeline
+
+" indentation
+set shiftwidth=4
+set shiftround
 set showtabline=2
+set preserveindent
+set smarttab
+set tabstop=4
+set softtabstop=4
+set hidden
 
 set confirm
 
@@ -109,11 +115,6 @@ set expandtab
 set history=200
 set undolevels=1000
 
-" indentation
-"set cindent
-"set cino=""
-set shiftwidth=4
-set shiftround
 
 " searching
 if has("gui_running") || &t_Co > 2
@@ -145,10 +146,7 @@ let mapleader = ","
 " autocmd
 filetype plugin on
 filetype plugin indent on
-"filetype indent on
 augroup vimrcEx
-
-
 
 au!
 "autocmd FileType text setlocal textwidth=78
