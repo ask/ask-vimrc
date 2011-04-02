@@ -31,7 +31,6 @@ set hidden
 set complete+=k
 set iskeyword=@,48-57,192-255
 set iskeyword-=:
-set copyindent
 set modeline
 set showtabline=2
 
@@ -47,13 +46,11 @@ hi Search ctermfg=white ctermbg=lightblue
 cmap w!! w !sudo tee % >/dev/null
 
 
-colorscheme baycomb
 
 " GUI options (only in effect when running in a GUI).
 if has("gui_running")
     set gfn=Inconsolata:h18
     set enc=utf-8
-    colorscheme baycomb " macvim
     syntax on
 
     " Import Python paths
@@ -97,14 +94,10 @@ EOF
         set antialias
 
     endif
-    
-else
-    "colorscheme evening
 endif
 
 " Terminal Options (only in effect when running from a terminal).
 if &t_Co > 2
-	"colorscheme evening
 	syntax on
     language en_GB.UTF-8
 endif	
@@ -238,6 +231,9 @@ set notimeout
 set ttimeout
 set timeoutlen=100
 
+set background=dark
+colorscheme solarized
+
 " Highlight trailing whitespace
 hi TrailingSpace ctermbg=1
 au filetype c,cpp,python match TrailingSpace "\s\+\n"
@@ -249,7 +245,7 @@ function InsertTabWrapper()
         return "\<tab>"
     else
         return "\<c-p>"
-    endif
+endif
 endfunction
 
 inoremap <tab> <c-r>=InsertTabWrapper()<cr>
