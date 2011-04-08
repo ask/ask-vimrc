@@ -145,7 +145,7 @@ let mapleader = ","
 
 " autocmd
 filetype plugin on
-filetype plugin indent on
+filetype indent on
 augroup vimrcEx
 
 au!
@@ -230,6 +230,7 @@ set ttimeout
 set timeoutlen=100
 
 set background=dark
+let g:solarized_visibility="high"
 colorscheme solarized
 
 " Highlight trailing whitespace
