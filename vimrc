@@ -1,6 +1,10 @@
 " vim-rc
 " -> ask@0x61736b.net
+"
 
+call pathogen#infect()
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
 
 set nocompatible
 set textwidth=78
@@ -192,6 +196,9 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType vim set omnifunc=syntaxcomplete#Complete
 autocmd FileType c set omnifunc=ccomplete#Complete
 inoremap <C-space> <C-x><C-O>
+
+" The stupid changelog file plugin resets our expandtab setting".
+autocmd FileType changelog set expandtab
 
 " Window dimensions
 set lines=38

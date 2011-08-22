@@ -1,4 +1,4 @@
-# Copyright 2010-2011 Wincent Colaiuta. All rights reserved.
+# Copyright 2010 Wincent Colaiuta. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -21,8 +21,12 @@
 # ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 # POSSIBILITY OF SUCH DAMAGE.
 
-require 'command-t/vim'
-
 module CommandT
-  class Scanner; end
+  module VIM
+    module Screen
+      def self.lines
+        ::VIM::evaluate('&lines').to_i
+      end
+    end # module Screen
+  end # module VIM
 end # module CommandT

@@ -1,4 +1,4 @@
-# Copyright 2010-2011 Wincent Colaiuta. All rights reserved.
+# Copyright 2010 Wincent Colaiuta. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -21,8 +21,23 @@
 # ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 # POSSIBILITY OF SUCH DAMAGE.
 
-require 'command-t/vim'
+require 'command-t/vim/screen'
+require 'command-t/vim/window'
 
 module CommandT
-  class Scanner; end
+  module VIM
+    def self.has_syntax?
+      ::VIM::evaluate('has("syntax")').to_i != 0
+    end
+
+    def self.pwd
+      ::VIM::evaluate 'getcwd()'
+    end
+
+    # Escape a string for safe inclusion in a Vim single-quoted string
+    # (single quotes escaped by doubling, everything else is literal)
+    def self.escape_for_single_quotes str
+      str.gsub "'", "''"
+    end
+  end # module VIM
 end # module CommandT
