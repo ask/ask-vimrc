@@ -10,3 +10,30 @@
 [submodule "bundle/vim-powerline"]
 	path = bundle/vim-powerline
 	url = https://github.com/Lokaltog/vim-powerline/
+[submodule "bundle/gundo"]
+	path = bundle/gundo
+	url = https://github.com/sjl/gundo.vim
+[submodule "bundle/vimerl"]
+	path = bundle/vimerl
+	url = https://github.com/oscarh/vimerl
+[submodule "bundle/vim-yankring"]
+	path = bundle/vim-yankring
+	url = https://github.com/chrismetcalf/vim-yankring
+[submodule "bundle/ack"]
+	path = bundle/ack
+	url = https://github.com/mileszs/ack.vim
+[submodule "bundle/vim-pastie"]
+	path = bundle/vim-pastie
+	url = https://github.com/tpope/vim-pastie
+[submodule "bundle/vim-endwise"]
+	path = bundle/vim-endwise
+	url = https://github.com/tpope/vim-endwise
+[submodule "bundle/ctrlp"]
+	path = bundle/ctrlp
+	url = https://github.com/kien/ctrlp.vim
+[submodule "bundle/vim-commentary"]
+	path = bundle/vim-commentary
+	url = https://github.com/tpope/vim-commentary
+[submodule "bundle/vim-repeat"]
+	path = bundle/vim-repeat
+	url = https://github.com/tpope/vim-repeat

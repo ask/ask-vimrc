@@ -263,3 +263,11 @@ inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 highlight Pmenu guibg=brown gui=bold
 
 runtime macros/matchit.vim
+
+" gundo
+nnoremap <F5> :GundoToggle<CR>
+
+" yankring
+nnoremap <silent> <F4> :YRShow<CR>
+
+let g:ctrlp_map = '<c-i>'
