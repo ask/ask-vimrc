@@ -7,6 +7,6 @@
 [submodule "bundle/solarized"]
 	path = bundle/solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
-[submodule "bundle/rope-omni"]
-	path = bundle/rope-omni
-	url = git://github.com/rygwdn/rope-omni.git.git
+[submodule "bundle/vim-powerline"]
+	path = bundle/vim-powerline
+	url = https://github.com/Lokaltog/vim-powerline/

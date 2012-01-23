@@ -7,7 +7,9 @@ call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
 set nocompatible
+set laststatus=2
 set textwidth=78
+set t_Co=256
 
 "set scrollbind
 set noscrollbind
@@ -119,6 +121,9 @@ set expandtab
 set history=200
 set undolevels=1000
 
+
+inoremap <silent> <Plug>delimitMateS-Tab <C-R>=delimitMate#JumpAny("\<S-Tab>")<CR>
+silent! imap <unique> <buffer> <C-Tab> <Plug>delimitMateS-Tab
 
 " searching
 if has("gui_running") || &t_Co > 2
