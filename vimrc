@@ -1,5 +1,5 @@
-" vim-rc
-" -> ask@0x61736b.net
+" vimrc
+" -> ask@celeryproject.org
 "
 
 call pathogen#infect()
@@ -99,9 +99,9 @@ EOF
         " Add MacVim shift-movement
         let macvim_hig_shift_movement = 1
 
-        " A itzy-bitzy amount of transparency
-        set transparency=4
-        
+        " transparency is broken (giving trailing lines)
+        set transparency=0
+
         " Anti-aliasing is niiiice
         set antialias
 
@@ -110,9 +110,9 @@ endif
 
 " Terminal Options (only in effect when running from a terminal).
 if &t_Co > 2
-	syntax on
+    syntax on
     language en_GB.UTF-8
-endif	
+endif
 
 " display and behaviour settings
 set ruler
@@ -127,7 +127,7 @@ silent! imap <unique> <buffer> <C-Tab> <Plug>delimitMateS-Tab
 
 " searching
 if has("gui_running") || &t_Co > 2
-	set hlsearch  " - "
+    set hlsearch  " - "
 endif
 set ignorecase
 set incsearch 
@@ -137,20 +137,18 @@ set wrapscan
 
 " from Perl Hacks (O'Reilly 2006)
 set iskeyword+=:
-map ,j <Esc>:r ~/.vim/js-header.stub<CR>
 
-map ,. <Esc>:!a x<CR>
-map ,/ <Esc>:!a err<CR>
-map ,m <Esc>:tabedit .<CR>
-map ,n <Esc>:tabclose<CR><Esc>:tabedit .<CR>
-map ,u <Esc>iλ<Esc>
-map ,g <Esc>:w<CR><Esc>:!git commit "%"<CR>
-map ,c <Esc>:VCSCommit<CR>
+let mapleader = ","
+
+map <leader>m <Esc>:tabedit .<CR>
+map <leader>n <Esc>:tabclose<CR><Esc>:tabedit .<CR>
+map <leader>u <Esc>iλ<Esc>
+map <leader>g <Esc>:w<CR><Esc>:!git commit "%"<CR>
+map <leader>c <Esc>:VCSCommit<CR>
+map <leader>t <Esc>:NERDTree<CR>
 "smoother scrolling
 :map <C-U> <C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y>      
 :map <C-D> <C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E>
-
-let mapleader = ","
 
 " autocmd
 filetype plugin on
@@ -160,9 +158,9 @@ augroup vimrcEx
 au!
 "autocmd FileType text setlocal textwidth=78
 autocmd BufReadPost *
-	\ if line("'\"") > 0 && line("'\"") <= line("$") |
-	\ 	exe "normal g`\"" |
-	\ endif
+    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal g`\"" |
+    \ endif
 augroup END
 
 map _u :call ID_search()<Bar>execute "/\\<" . g:word . "\\>"<CR>
@@ -179,17 +177,16 @@ endfun
 " taglist config
 "
 "
-
 let Tlist_Auto_Highlight_Tag = 1
 let Tlist_Exit_OnlyWindow    = 1
 let Tlist_Use_Right_Window   = 1
 let Tlist_WinWidth           = 40
 let Tlist_Inc_Winwidth       = 1
 let Tlist_Highlight_Tag_On_BufEnter = 1
-
 map ,L <Esc>:TlistToggle<CR><Esc>
 map ,l <Esc>:TlistOpen<CR><Esc>
 
+" show tabs and spaces
 set list
 set listchars=tab:>-,extends:#
 
@@ -271,3 +268,5 @@ nnoremap <F5> :GundoToggle<CR>
 nnoremap <silent> <F4> :YRShow<CR>
 
 let g:ctrlp_map = '<c-i>'
+
+let g:EasyMotion_leader_key = '<Leader>'
