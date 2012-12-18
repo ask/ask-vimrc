@@ -130,7 +130,7 @@ if has("gui_running") || &t_Co > 2
     set hlsearch  " - "
 endif
 set ignorecase
-set incsearch 
+set incsearch
 set showmatch "potentially slow, turn off in big files.
 set nowrap
 set wrapscan
@@ -147,7 +147,7 @@ map <leader>g <Esc>:w<CR><Esc>:!git commit "%"<CR>
 map <leader>c <Esc>:VCSCommit<CR>
 map <leader>t <Esc>:NERDTree<CR>
 "smoother scrolling
-:map <C-U> <C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y>      
+:map <C-U> <C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y>
 :map <C-D> <C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E>
 
 " autocmd
