@@ -203,8 +203,8 @@ inoremap <C-space> <C-x><C-O>
 autocmd FileType changelog set expandtab
 
 " Window dimensions
-set lines=38
-set columns=78
+set lines=50
+set columns=98
 
 " Don't show toolbar
 set go-=T
