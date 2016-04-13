@@ -1,10 +1,14 @@
 " vimrc
 " -> ask@celeryproject.org
 "
-
+"
+" http://unix.stackexchange.com/questions/14497/why-would-vim-return-non-zero-exit-code-if-i-exit-immediately-after-opening
+filetype on
+filetype off
 call pathogen#infect()
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
+filetype plugin indent on
 
 set nocompatible
 set laststatus=2
@@ -151,8 +155,6 @@ map <leader>t <Esc>:NERDTree<CR>
 :map <C-D> <C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E>
 
 " autocmd
-filetype plugin on
-filetype indent on
 augroup vimrcEx
 
 au!
@@ -270,3 +272,5 @@ nnoremap <silent> <F4> :YRShow<CR>
 let g:ctrlp_map = '<c-i>'
 
 let g:EasyMotion_leader_key = '<Leader>'
+let g:gitgutter_enabled = 0
+let g:loaded_gitgutter = 1

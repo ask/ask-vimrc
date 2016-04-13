@@ -46,3 +46,9 @@
 [submodule "bundle/vim-colors-solarized"]
 	path = bundle/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized
+[submodule "bundle/vim-gitgutter"]
+	path = bundle/vim-gitgutter
+	url = git://github.com/airblade/vim-gitgutter.git
+[submodule "bundle/editorconfig"]
+	path = bundle/editorconfig
+	url = https://github.com/editorconfig/editorconfig-vim.git
